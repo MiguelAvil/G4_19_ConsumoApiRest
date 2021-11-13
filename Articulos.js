@@ -1,4 +1,5 @@
 var UrlGetArticulos = 'http://localhost:80/G4_19/controller/articulos.php?op=GetArticulos';
+var UrlPostArticulo = 'http://localhost:80/G4_19/controller/articulos.php?op=InsertArticulos';
 
 // cuando el documento(pagina este lista) aparecen los datos de articulos
 $(document).ready(function(){
@@ -28,5 +29,31 @@ function CargarArticulos(){
             $('.articulos').html(Valores);
             }
         }
-    })
+    });
+}
+
+function AgregarArticulo(){
+    var datosarticulo = {
+        descripcion: $('#descripcion').val(),
+        unidad: $('#unidad').val(),
+        costo: $('#costo').val(),
+        precio: $('#precio').val(),
+        aplica_isv: $('#aplica_isv').val(),
+        porcentaje_isv: $('#porcentaje_isv').val(),
+        id_socio: $('#id_socio').val()
+    };
+    var datosarticulojson = JSON.stringify(datosarticulo);
+
+    $.ajax({
+        url: UrlPostArticulo,
+        type: 'POST',
+        data: datosarticulojson,
+        datatype: 'JSON',
+        contentType: 'aplication/json',
+        success: function(response){
+            console.log(response);
+            
+        }
+    });
+    alert("Articulo Agredado");
 }

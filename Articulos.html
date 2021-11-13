@@ -11,6 +11,7 @@
         crossorigin="anonymous">
     <!-- Libreria jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <script src="/Articulos.js"></script>
     
     
@@ -19,12 +20,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="consulta">
+        <div class="consulta mt-4">
             <div class="row">
                 <div class="col-6">
                     <h1>Lista de Articulos</h1>
                 </div>
-                <div class="col_6">
+                <div class="col-6">
                     <h3>Agregar Articulos</h3>
                     <a href="#" class="btn btn-primary">Agregar Articulo</a>
                 </div>
@@ -50,6 +51,35 @@
                         
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="formulario">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Agregar Articulo</h3>
+                </div>
+                <div class="col-12">
+                    <form class="articulo">
+                        <label for="">Descripción</label>
+                        <input type="text" id="descripcion" class="form-control" placeholder="Ingrese la descripción">
+                        <label for="">Unidades</label>
+                        <input type="text" id="unidad" class="form-control" placeholder="Ingrese las Unidades">
+                        <label for="">Costo</label>
+                        <input type="text" id="costo" class="form-control" placeholder="Ingreso el costo">
+                        <label for="">Precio</label>
+                        <input type="text" id="precio" class="form-control" placeholder="Ingrese el precio">
+                        <label for="">Aplica ISV</label>
+                        <input type="text" id="aplica_isv" class="form-control" placeholder="Ingrese S o N">
+                        <label for="">Porcentaje ISV</label>
+                        <input type="text" id="porcentaje_isv" class="form-control" placeholder="Ingrese el porcentaje de ISV ejemplo: 0.15">
+                        <label for="">ID Socio</label>
+                        <input type="text" id="id_socio" class="form-control" placeholder="Ingrese el ID del Socio">
+                        <hr>
+                        <div class="button">
+                            <input type="submit" id="btnagregar" onclick="AgregarArticulo()" value="Ingresar Articulo" class="btn btn-success">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
