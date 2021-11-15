@@ -46,6 +46,7 @@ function AgregarArticulo(){
         precio: $('#precio').val(),
         aplica_isv: $('#aplica_isv').val(),
         porcentaje_isv: $('#porcentaje_isv').val(),
+        estado: $('#estado').val(),
         id_socio: $('#id_socio').val()
     };
     var datosarticulojson = JSON.stringify(datosarticulo);
@@ -84,10 +85,13 @@ function CargarArticulo(idarticulo){
             $('#precio').val(MiItems[0].PRECIO);
             $('#aplica_isv').val(MiItems[0].APLICA_ISV);
             $('#porcentaje_isv').val(MiItems[0].PORCENTAJE_ISV);
+            $('#estado').val(MiItems[0].ESTADO)
             $('#id_socio').val(MiItems[0].ID_SOCIO);
-            var btnactualizar = '<input type="submit" id="btn_actualizar" onclick="ActualizarArticulo('+MiItems[0].ID+')"'+
-            'value="Actualizar Articulo" class="btn btn-outline-primary"><input>';
+            var btnactualizar = 
+            '<input type="submit" id="btn_actualizar" onclick="ActualizarArticulo('+MiItems[0].ID+')"'+
+            'value="Actualizar Articulo" class="btn btn-outline-primary"></input>';
             $('.button').html(btnactualizar);
+            
         }
     });
 }
@@ -101,6 +105,7 @@ function ActualizarArticulo(idarticulo){
         precio: $('#precio').val(),
         aplica_isv: $('#aplica_isv').val(),
         porcentaje_isv: $('#porcentaje_isv').val(),
+        estado: $('#estado').val(),
         id_socio: $('#id_socio').val()
     };
     var datosarticulojson = JSON.stringify(datosarticulo);
