@@ -62,7 +62,7 @@ function AgregarArticulo(){
             
         }
     });
-    alert("Articulo Agredado");
+    alert("Articulo Agregado");
 }
 
 function CargarArticulo(idarticulo){
@@ -142,4 +142,5 @@ function EliminarArticulo(idarticulo){
         }
     });
     alert("Articulo Eliminado");
+    CargarArticulo();
 }
